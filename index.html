@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangun Datar Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Kalkulator Matematik</h1>
+        <p>Sebuah website sederhana yang akan membantu anda untuk menghitung luas dab keliling bangun datar</p>
+    </header>
+
+    <main>
+        <!-- Dropdown Pilihan Bangun Datar -->
+        <section class="selection-section">
+            <div class="form-group">
+                <label for="shape">Pilih Bangun Datar:</label>
+                <select id="shape" onchange="displayForm()">
+                    <option value="">--Pilih--</option>
+                    <option value="segitiga">Segitiga</option>
+                    <option value="jajargenjang">Jajargenjang</option>
+                </select>
+            </div>
+        <!-- Dropdown Pilihan Tipe Perhitungan -->
+            <div class="form-group">
+                <label for="calculation">Pilih Tipe Perhitungan:</label>
+                <select id="calculation" onchange="displayForm()">
+                    <option value="">--Pilih--</option>
+                    <option value="keliling">Keliling</option>
+                    <option value="luas">Luas</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Form Perhitungan Segitiga -->
+            <section id="segitigaForm" class="form-section" style="display:none;">
+                <div class="form-card">
+                    <h2>Perhitungan Segitiga</h2>
+                    <div id="kelilingSegitiga" style="display:none;">
+                        <h3>Keliling Segitiga</h3>
+                        <img src="asset/triangle.jpeg">
+                        <input type="number" id="s1" placeholder="Sisi 1 (S1)" />
+                        <input type="number" id="s2" placeholder="Sisi 2 (S2)" />
+                        <input type="number" id="s3" placeholder="Sisi 3 (S3)" />
+                        <p id="errorSegitigaKeliling" class="error-message"></p> 
+                        <button onclick="calculatePerimeter()">Hitung</button>
+                        <button onclick="resetSegitigaKeliling()" class="reset-button">Reset</button> 
+                        <p id="resultSegitigaKeliling"></p>
+                        <p id="perimeterStepsSegitiga"></p>
+                    </div>
+
+                    <div id="luasSegitiga" style="display:none;">
+                        <h3>Luas Segitiga</h3>
+                        <img src="asset/triangle.jpeg">
+                        <input type="number" id="baseSegitiga" placeholder="Alas" />
+                        <input type="number" id="heightSegitiga" placeholder="Tinggi" />
+                        <p id="errorSegitigaLuas" class="error-message"></p> 
+                        <button onclick="calculateArea()">Hitung</button>
+                        <button onclick="resetSegitigaLuas()" class="reset-button">Reset</button> 
+                        <p id="resultSegitigaLuas"></p>
+                        <p id="areaStepsSegitiga"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Perhitungan Jajargenjang -->
+            <section id="jajargenjangForm" class="form-section" style="display:none;">
+                <div class="form-card">
+                    <h2>Perhitungan Jajargenjang</h2>
+                    <div id="kelilingJajargenjang" style="display:none;">
+                        <h3>Keliling Jajargenjang</h3>
+                        <img src="asset/jajargenjang.jpeg" alt="Jajargenjang">
+                        <input type="number" id="panjangJajargenjang" placeholder="Panjang" />
+                        <input type="number" id="lebarJajargenjang" placeholder="Lebar" />
+                        <p id="errorJajargenjangKeliling" class="error-message"></p> 
+                        <button onclick="calculateKelilingJajargenjang()">Hitung</button>
+                        <button onclick="resetJajargenjangKeliling()" class="reset-button">Reset</button> 
+                        <p id="resultJajargenjangKeliling"></p>
+                        <p id="kelilingJajargenjangSteps"></p>
+                    </div>
+
+                    <div id="luasJajargenjang" style="display:none;">
+                        <h3>Luas Jajargenjang</h3>
+                        <img src="asset/jajargenjang.jpeg" alt="Jajargenjang">
+                        <input type="number" id="alasJajargenjang" placeholder="Alas" />
+                        <input type="number" id="tinggiJajargenjang" placeholder="Tinggi" />
+                        <p id="errorJajargenjangLuas" class="error-message"></p> 
+                        <button onclick="calculateLuasJajargenjang()">Hitung</button>
+                        <button onclick="resetJajargenjangLuas()" class="reset-button">Reset</button> 
+                        <p id="resultJajargenjangLuas"></p>
+                        <p id="luasJajargenjangSteps"></p>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
